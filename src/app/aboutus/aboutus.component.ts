@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'; // Import Router
-//import * as XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 
 export interface User {
   id: string; // Unique ID
