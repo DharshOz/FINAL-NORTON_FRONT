@@ -5,7 +5,7 @@
   "ng": "ng",
   "start": "ng serve",
   "build": "ng build",
-  "postbuild": "mkdir dist\\fr && copy serve.json dist\\fr",
+"postbuild": "mkdir -p dist/fr && cp serve.json dist/fr/",
   "watch": "ng build --watch --configuration development",
   "test": "ng test",
   "serve:ssr:fr": "node dist/fr/server/server.mjs"
