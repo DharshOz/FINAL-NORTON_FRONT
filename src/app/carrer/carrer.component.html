@@ -1,0 +1,41 @@
+<div classs="body12"><div class="career-container">
+  <div class="career-header">
+    <h2>Careers at Norton Groups</h2>
+    <p>At Norton Groups, our people are our greatest strength. We are committed to delivering high-quality products and excellent service to our customers. We offer a supportive work environment where employees can learn, grow, and succeed.</p>
+    <p><strong>Why Work With Us?</strong> Friendly teams, growth opportunities, focus on quality and innovation, and work-life balance.</p>
+    <p><strong>Who We’re Looking For?</strong> Passionate and motivated individuals ready to grow across various fields.</p>
+    <p><strong>Join Norton Groups</strong> and build a rewarding career with us.</p>
+  </div>
+  </div>
+<form [formGroup]="careerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <label>Email:</label>
+    <input type="email" formControlName="email" required /><br><br>
+  
+    <label>Username:</label>
+    <input type="text" formControlName="username" required /><br><br>
+  
+    <label>Phone:</label>
+    <input type="text" formControlName="phone" required /><br><br>
+  
+    <label>City:</label>
+    <input type="text" formControlName="city" required /><br><br>
+  
+    <label>State:</label>
+    <input type="text" formControlName="state" required /><br><br>
+  
+    <label>Upload Resume (PDF/Image):</label>
+    <input type="file" (change)="onFileChange($event)" /><br><br>
+    <button type="submit" [disabled]="isLoading">
+      {{ isLoading ? 'Submitting...' : 'Submit' }}
+    </button>
+    
+  </form>
+  
+  <div *ngIf="submitSuccess" style="color: green;">
+    Career form submitted successfully!
+  </div>
+  
+  <div *ngIf="submitError" style="color: red;">
+    {{ submitError }}
+  </div>
+</div>

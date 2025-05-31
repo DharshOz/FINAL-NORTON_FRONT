@@ -1,0 +1,120 @@
+
+<div class="ni-component">
+  
+  <div class="ni-top-bar">
+    <div class="ni-top-bar-container">
+      <div class="ni-top-bar-left">
+        <span><i class="fas fa-map-marker-alt"></i>109, Irugur Rd, Ondipudur, Coimbatore, Tamil Nadu 641016</span>
+      </div>
+      <div class="ni-top-bar-right">
+        <a href="mailto:contact&#64;nortongroup.co.in"><i class="fas fa-envelope"></i>contact&#64;nortongroup.co.in</a>
+        <a href="tel:+919894699933"><i class="fas fa-phone"></i> +91 9894699933</a>
+      </div>
+    </div>
+  </div>
+<div *ngIf="!loading">
+
+  <header class="header">
+    <div class="logo">
+      <button (click)="navigateTohome()"><img src="favicon.ico" alt="Datalytics Club Logo"></button>
+    </div>
+    
+    <nav class="nav" id="mobile-menu">
+      
+      <button class="hamburger" (click)="toggleMenu()">
+        &#9776;
+      </button>
+    
+      
+      <ul [ngClass]="{'open': isMenuOpen}" class="nav-list">
+        <li><b><a (click)="navigateTohome()" fragment="home">Home</a></b></li>
+        <li class="ni-nav-item ni-dropdown" (mouseenter)="fetchCategories()" (mouseleave)="hideDropdown()">
+          <b><a (click)="navigateToproductfetch()" fragment="c">Product</a></b>
+        
+          <ul *ngIf="showDropdown" class="ni-dropdown-menu">
+            <li *ngFor="let cat of categories" class="ni-dropdown-item" (mouseenter)="fetchProductsByCategory(cat)">
+              <strong>{{ cat }}</strong>
+        
+              <ul *ngIf="activeCategory === cat && productsByCategory[cat]" class="ni-dropdown-submenu">
+                <li *ngFor="let prod of productsByCategory[cat]" class="ni-dropdown-subitem" (click)="onProductClick(prod)">
+                  <div *ngFor="let line of splitIntoTwoWordLines(prod.name)">
+                    {{ line }}
+                  </div>
+                  
+                </li>
+              </ul>
+        
+            </li>
+          </ul>
+        </li>
+        <li><b><a (click)="navigateToaboutus()">About Us</a></b></li>
+        
+        <li><b><a (click)="navigateTocontactus()" fragment="contact-us">Contact Us</a></b></li>
+        <li><b><a (click)="navigateTocarrer()" fragment="p1">Carrer</a></b></li>
+        
+      </ul>
+    </nav>
+    
+  </header>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  
+<footer class="footer"><button class="rect-button" (click)="navigateTohome()">
+  <img src="favicon.ico" alt="Datalytics Club Logo" />
+</button>
+
+  <div class="footer-container">
+
+    <div class="footer-links">
+      <h3>Site Maps</h3>
+      <ul>
+        
+        <li><a (click)="navigateTohome()">Home</a></li>
+        <li><a (click)="navigateToaboutus()">About Us</a></li>
+        <li><a (click)="navigateTocontactus()">Contact Us</a></li>
+        <li><a (click)="navigateTocarrer()">Careers</a></li>
+         
+      </ul>
+    </div>
+
+    <div class="contact-section">
+      <h2>Contact</h2>
+      <address>
+        <p>109, Irugur Rd, Ondipudur, Coimbatore</p>
+        <p>Tamil Nadu 641016,</p>
+        
+      </address>
+      <div class="contact-email">
+        <p>Email: <a href="mailto:contact@nortongroup.co.in">contact&#64;nortongroup.co.in</a></p>
+      
+      </div>
+    </div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+    
+    <div class="footer-contact">
+      <h3>Get in Touch</h3>
+      <p>Phone: <a href="tel:+91 9894699933">+91 9894699933</a></p>
+      <div class="social-icons">
+        
+        <a href="https://www.linkedin.com/company/the-norton-group-1969?originalSubdomain=ie" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/norton_group/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  
+    
+    
+  </div>
+
+</footer>
+<footer class="footer1">
+  <div class="footer-content">
+    <p>&copy; 1979 Surya Pumps. All rights reserved.</p>
+      </div>
+</footer>

@@ -1,0 +1,568 @@
+/* Base Container - Soft White Theme */
+.product-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #f8f9fa;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 2px solid black; /* <-- Added black outline */
+}
+
+/* Product Header */
+.product-header {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  border: 0.5px solid black; /* <-- Added black outline */
+}
+
+.product-header:hover {
+  border-color: #ce2528;
+  box-shadow: 0 15px 14px rgba(206, 37, 40, 0.08);
+  transform: translateY(-3px);
+}
+
+.product-title {
+  font-size: 2rem;
+  color: #2d3436;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.product-meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+  color: #6c757d;
+}
+
+/* Image Section */
+.image-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.main-image-container {
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.main-image-container:hover {
+  border-color: #ce2528;
+  box-shadow: 0 24px 24px rgba(206, 37, 40, 0.12);
+}
+
+.main-image {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  padding: 1.2rem;
+
+}
+
+/* Carousel Thumbnails */
+.thumbnail-carousel {
+  margin: 0 auto;
+  max-width: 820px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.6rem 0;
+}
+
+.thumbnail {
+  flex: 0 0 85px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  transition: all 0.25s ease;
+}
+
+.thumbnail:hover {
+  border-color: #ce2528;
+  transform: scale(1.08);
+}
+
+.thumbnail.active {
+  border: 2px solid #ce2528;
+  box-shadow: 0 4px 12px rgba(206, 37, 40, 0.18);
+}
+
+/* Specifications Table - Enhanced */
+.specs-container {
+  margin-top: 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  border: 1px solid #e3e3e3;
+}
+
+.elegant-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  min-width: 520px;
+}
+
+.table-header {
+  background: linear-gradient(to right, #2d3436, #434446);
+  border: 0.5px solid black; /* <-- Added black outline */
+
+}
+
+.table-header th {
+  padding: 1.2rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  border: 1px solid #171818;
+}
+
+.spec-row {
+  border: 1px solid #171818;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.spec-row:hover {
+  background: #45ebc1c9;
+  transform: scale(1.002);
+}
+
+.spec-type, .spec-detail {
+  padding: 1.05rem 1.8rem;
+  font-size: 1rem;
+  transition: background 0.25s ease;
+}
+
+.spec-row:hover .spec-type,
+.spec-row:hover .spec-detail {
+  background: #45ebc1c9;
+}
+
+/* Remove conflicting individual hover */
+.spec-type:hover,
+.spec-detail:hover {
+  background: inherit; /* or remove entirely */
+}
+
+.spec-type {
+  width: 38%;
+  border-right: 1px solid #eee;
+  font-weight: 600;
+  color: #2e2e2e;
+  background: #fafafa;
+  border: 1px solid #171818;
+}
+
+.spec-detail {
+  color: #555;
+  font-weight: 400;
+  border: 1px solid #171818;
+}
+
+.spec-row:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-container {
+    padding: 1.8rem;
+    margin: 1rem;
+  }
+
+  .main-image {
+    height: 320px;
+    padding: 0.8rem;
+  }
+
+  .product-title {
+    font-size: 1.5rem;
+  }
+
+  .spec-type, .spec-detail {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .thumbnail {
+    flex: 0 0 75px;
+    height: 55px;
+  }
+}
+
+/* Loading & Error States */
+.loading, .error {
+  text-align: center;
+  padding: 2.2rem;
+  font-size: 1.15rem;
+}
+
+.loading {
+  color: #6c757d;
+}
+
+.error {
+  color: #ce2528;
+  font-weight: 600;
+}
+/* Default styles for table */
+.compact-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.elegant-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 350px; /* Prevents the table from being too narrow */
+}
+
+.elegant-specs-table th,
+.elegant-specs-table td {
+  padding: 8px 12px;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+/* Optional: Add subtle borders and background for elegance */
+.elegant-specs-table thead {
+  background-color: #f8f8f8;
+}
+
+.elegant-specs-table th {
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+}
+
+.elegant-specs-table td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 600px) {
+  .compact-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .elegant-specs-table th,
+  .elegant-specs-table td {
+    font-size: 13px;
+    white-space: normal; /* Allows wrapping */
+  }
+}
+
+/* Table container */
+.compact-table-container {
+  width: 100%;
+}
+
+/* Main table styling */
+.elegant-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Force columns to obey width rules */
+}
+
+/* Header and cell styling */
+.elegant-specs-table th,
+.elegant-specs-table td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal; /* Allow line breaks */
+  font-size: 14px;
+}
+
+/* Optional visual enhancements */
+.elegant-specs-table thead {
+  background-color: #f0f0f0;
+}
+
+.elegant-specs-table th {
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+}
+
+.elegant-specs-table td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive font size and spacing */
+@media screen and (max-width: 600px) {
+  .elegant-specs-table th,
+  .elegant-specs-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+.image-section {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.main-image-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.main-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.thumbnail-carousel {
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px 40px; /* Room for buttons */
+  width: 100%;
+}
+
+.thumbnail {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnail.active {
+  border-color: #007BFF;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+.main-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.main-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+.main-image-container {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3; /* Optional: sets proportional height */
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid black; /* Black frame */
+  border-radius: 10px;
+}
+
+.main-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+/* Base style for all devices */
+.main-image-container {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid red; /* Your red border */
+  border-radius: 10px;
+}
+
+.main-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 👇 Responsive override for mobile view */
+/* Base style for desktop and larger screens */
+.main-image-container {
+  width: 100%;
+  max-width: 400px; /* Controls frame size on large screens */
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image fits inside container */
+.main-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 🔥 Mobile view: reduce the frame size */
+@media (max-width: 600px) {
+  .main-image-container {
+    max-width: 250px; /* 👈 smaller frame for mobile */
+    padding: 8px;
+  }
+}
+
+/* Base styling */
+.thumbnail-carousel {
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 8px 0;
+  max-width: 100%;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: blue;
+}
+
+.carousel-btn {
+  background-color: rgb(51, 50, 50);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 4px 8px;
+}
+
+/* 🔥 Responsive tweaks for mobile */
+@media (max-width: 600px) {
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .carousel-btn {
+    font-size: 20px;
+    padding: 2px 6px;
+  }
+
+  .carousel {
+    gap: 6px;
+  }
+}

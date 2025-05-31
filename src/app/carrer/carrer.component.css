@@ -1,0 +1,152 @@
+/* Container for the entire career section */
+
+.body12 {
+  background: repeating-linear-gradient(
+    135deg,
+    #e6f4fb,
+    #e6f4fb 10px,
+    #d2ebf8 10px,
+    #d2ebf8 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  color: #002244;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+}
+.career-container {
+    max-width: 700px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    padding: 25px 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+
+  /* Header styling */
+  .career-header {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2a6ebb;
+  }
+
+  .career-header h2 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .career-header p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+  }
+  form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 15px;
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  input[type="file"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  input[type="email"]:focus,
+  input[type="text"]:focus,
+  input[type="file"]:focus {
+    outline: none;
+    border-color: #2a6ebb;
+    box-shadow: 0 0 8px rgba(42, 110, 187, 0.3);
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    background-color: #2a6ebb;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1f4f8b;
+  }
+  
+  div[style*="color: green"] {
+    max-width: 500px;
+    margin: 15px auto;
+    color: #22863a;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  div[style*="color: red"] {
+    max-width: 500px;
+    margin: 15px auto;
+    color: #d73a49;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 600px) {
+    form {
+      padding: 20px 20px;
+      margin: 20px 15px;
+    }
+  
+    label {
+      font-size: 14px;
+    }
+  
+    input[type="email"],
+    input[type="text"],
+    input[type="file"] {
+      font-size: 13px;
+      padding: 9px 12px;
+    }
+  
+    button[type="submit"] {
+      font-size: 15px;
+      padding: 11px 0;
+    }
+  
+    div[style*="color: green"],
+    div[style*="color: red"] {
+      font-size: 15px;
+      margin: 10px 15px;
+    }
+  }
+  

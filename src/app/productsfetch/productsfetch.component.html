@@ -1,0 +1,53 @@
+<div class="search-container">
+  <div class="search-wrapper">
+    <input 
+      type="text" 
+      placeholder="Search products..." 
+      [(ngModel)]="searchQuery"
+      (input)="filterProducts()"
+      class="search-input"
+    >
+    <button class="search-btn" (click)="filterProducts()">
+      Search
+    </button>
+  </div>
+</div>
+
+<div class="category-container">
+  <!-- No Results Message -->
+  <div *ngIf="showNoResults()" class="no-results">
+    <p>No products found matching your search criteria</p>
+  </div>
+
+  <!-- Product Categories -->
+  <div *ngFor="let category of categoryOrder" class="category-group">
+    <div *ngIf="groupedProducts[category]?.length">
+      <h2 class="category-heading">{{ category }}</h2>
+      <div class="product-gallery">
+        <!-- Product Cards -->
+        <a
+          *ngFor="let product of groupedProducts[category]"
+          class="product-card"
+          [routerLink]="['/viewproduct', product._id]"
+          style="text-decoration: none; color: inherit;"
+        >
+          <div class="card-image">
+            <img
+              *ngIf="product.images?.length"
+              [src]="product.images[0]"
+              alt="{{ product.name }}"
+            />
+          </div>
+          <div class="card-content">
+            <p class="product-category">{{ product.category }}</p>
+            <h3 class="product-title">{{ product.name }}</h3>
+            <span class="read-more">
+              Read More <span class="arrow"></span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</div>

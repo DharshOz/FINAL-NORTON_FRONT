@@ -1,0 +1,240 @@
+/* Category Section Styling */
+
+.search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #ce2528;
+    box-shadow: 0 4px 6px rgba(206, 37, 40, 0.1);
+  }
+  
+  /* Search Container */
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-btn {
+    padding: 0 25px;
+    background: #ce2528;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .search-btn:hover {
+    background: #b21d20;
+    transform: translateY(-1px);
+  }
+  
+  /* No Results Message */
+  .no-results {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: #ce2528;
+    font-weight: 500;
+    border: 2px dashed #ce2528;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  
+  .category-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .category-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d80e11;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  /* Product Gallery Grid */
+  .product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  /* Product Card Styling */
+  .product-card {
+    background: #afa7a7;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0.8px solid black; /* Black outline */
+    font-weight: 600; /* Base bold font */
+  }
+  
+  /* Add click animation */
+  .product-card:active {
+    transform: translateY(-2px) scale(0.98);
+  }
+  
+  /* Add hover overlay effect */
+  .card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(37, 195, 206, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover .card-image::after {
+    opacity: 1;
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    border: 0.5px solid black; /* Black border on image */
+  }
+  
+  .card-content {
+    padding: 25px;
+  }
+  
+  .product-category {
+    color: #e70a0e;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  .product-title {
+    font-size: 1.3rem;
+    color: #0e0d0d;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  
+  .product-spec {
+    color: #080808;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 600;
+  }
+  
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    color: #070707;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #ce2528;
+  }
+  
+  .arrow {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-left: 8px;
+    position: relative;
+  }
+  
+  .arrow::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .product-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .card-image img {
+      height: 200px;
+    }
+  
+    .product-title {
+      font-size: 1.1rem;
+    }
+  
+    .product-spec {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    .card-image img {
+      height: 180px;
+    }
+  
+    .search-container,
+    .category-container {
+      padding: 20px 15px;
+    }
+  
+    .product-title {
+      font-size: 1rem;
+    }
+  
+    .product-spec {
+      font-size: 0.85rem;
+    }
+  
+    .read-more {
+      font-size: 0.9rem;
+    }
+  }
+  

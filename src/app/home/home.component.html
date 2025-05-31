@@ -1,0 +1,191 @@
+
+<div *ngIf="loading" class="loading-container">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+
+  
+
+
+  
+ 
+</div>
+
+<div *ngIf="!loading">
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-line"></div>
+      <h1>Reliable. Efficient. Future-Ready.</h1>
+      <p>Find out why we’re a global leader in water pump systems and smart fluid solutions.</p>
+      <div class="tags">
+        Smart Pumping Solutions | IoT Monitoring Systems | Manuals & More
+      </div>
+      <div class="hero-buttons">
+        <a href="/Contactus" class="btn-primary">Contact Us</a>
+        </div>
+    </div>
+    <div class="hero-image">
+      <img src="home.png" alt="Uploaded Image">
+
+      
+    </div>
+  </section>
+
+<div id="about-us" class="about-us-section">
+  <div class="about-us-content">
+    <div class="about-us-image" style="text-align: center;">
+      <img [src]="uploadedImageUrl" alt="Uploaded Image" style="max-width: 100%; border-radius: 8px;">
+    </div>
+    
+    <div class="about-us-text">
+      <div class="about-label">ABOUT US</div>
+      <div>
+      <p>
+        We Surya Pumps group of companies laid our first foot in to pump manufacturing business in 1979 founded by an engineering graduate Mr.N.Subramanian from Coimbatore, Tamilnadu, India. Our parent company (Surya pumps) starts manufacturing pumps for agriculture, domestic sectors and motors for industrial sectors.
+
+ 
+      </p>
+    </div>
+      <a href="/Aboutus" class="btn-read-more">Read more</a>
+    </div>
+  </div>
+</div>
+
+<div class="h">
+  <h1 id="hj">Our Products</h1>
+<div class="category-container">
+  
+  <div 
+    *ngFor="let category of categories" 
+    class="category-card"
+    (click)="goToCategory(category)"
+  >
+    <h3>{{ category }}</h3>
+    <img 
+      [src]="categoryImages[category] || 'assets/default-image.jpg'" 
+      alt="{{ category }} image" 
+    />
+  </div>
+</div>
+
+</div>
+
+<div id="what-we-do" class="what-we-do-section">
+  <h2>What Skills Do We Value?</h2>
+  <div class="skills-label">ENGINEERING & MANUFACTURING</div>
+  <div class="what-we-do-cards">
+
+    <div class="what-we-do-card">
+      <img src="get.jpg" alt="Mechanical Design">
+      <h3>Mechanical Design</h3>
+      <p>Expertise in designing pump components and systems using CAD tools.</p>
+    </div>
+
+    <div class="what-we-do-card">
+      <img src="sc.jpg" alt="Manufacturing">
+      <h3>Manufacturing</h3>
+      <p>Hands-on skills in fabrication, CNC operations, and assembly of pumps.</p>
+    </div>
+
+    <div class="what-we-do-card">
+      <img src="1234.jpg" alt="Quality Control">
+      <h3>Quality Control</h3>
+      <p>Inspection and testing expertise to ensure product reliability and standards.</p>
+    </div>
+
+    <div class="what-we-do-card">
+      <img src="pump.jpg" alt="Technical Support">
+      <h3>Technical Support</h3>
+      <p>Providing after-sales service, troubleshooting, and product guidance.</p>
+    </div>
+
+    <div class="what-we-do-card">
+      <img src="home.png" alt="Product Innovation">
+      <h3>Product Innovation</h3>
+      <p>Developing efficient, eco-friendly, and high-performance pumping solutions.</p>
+    </div>
+
+    <div class="what-we-do-card">
+      <img src="images.jpg" alt="Electrical Integration">
+      <h3>Electrical Integration</h3>
+      <p>Understanding of motor systems, wiring, and electrical controls for pumps.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="customer">
+    <div class="hero-text" style="flex: 1;">
+      <h1>About Our Customer</h1>
+      <p>At Surya Pumps, Coimbatore, we place immense value on every customer visit—not just as a meeting, but as a meaningful interaction that strengthens our commitment to excellence. When customers walk through our doors, they’re welcomed not as outsiders, but as partners. Each visit is tailored to help them understand our processes, inspect our products, and get a firsthand look at the quality and integrity that define our work.
+
+Our team takes the time to walk customers through each stage of manufacturing, quality control, and logistics, addressing every question with transparency and genuine care. Whether it’s a first-time visitor or a long-standing client, we ensure their experience is both informative and personalized. These visits often go beyond business—they’re about trust-building, sharing ideas, and aligning our goals for long-term collaboration.
+        
+      </p>
+    </div>
+    <div class="hero-image" style="flex: 1;">
+      <img [src]="imgcustomer" alt="customer" style="max-width: 100%; border-radius: 8px;">
+    </div>
+ 
+
+</div>
+
+
+
+
+<div class="info-panel">
+  <div class="info-left">
+    <div class="tag-line">EXCELLENCE</div>
+    <h1 class="panel-heading">We are dedicated to crafting innovation</h1>
+    <p class="panel-description">
+      Our mission is to design and deliver smart solutions that meet global standards. By combining efficiency, sustainability, and precision, we ensure that our customers receive nothing but the best in class products. Our teams constantly innovate to create value and growth opportunities within every sector we serve.
+    </p>
+    <a href="/Aboutus" class="learn-more-button">Learn More »</a>
+  </div>
+
+  <div class="info-right">
+    <div class="info-item">
+      <div class="icon-box">✅</div>
+      <div>
+        <h3>Reliable Output</h3>
+        <p>We guarantee dependable and consistent performance in every product we build.</p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="icon-box">⚙️</div>
+      <div>
+        <h3>Advanced Systems</h3>
+        <p>Our facilities are equipped with next-gen technology for optimized production.</p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="icon-box">📊</div>
+      <div>
+        <h3>Global Standards</h3>
+        <p>We align our processes with international compliance and quality frameworks.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact-us" class="contact-us-section">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <span>Email: <a href="mailto:contact@nortongroup.co.in">contact&#64;nortongroup.co.in</a></span>
+    <span>|</span>
+    <span>Phone: <a href="tel:+919894699933">+91 9894699933</a></span>
+    <span>|</span>
+    <span>LinkedIn: <a href="https://www.linkedin.com/company/the-norton-group-1969?originalSubdomain=ie" target="_blank">Norton Group</a></span>
+    <span>|</span>
+    <span>Instagram: <a href="https://www.instagram.com/norton_group/" target="_blank">&#64;norton_group</a></span>
+  </div>
+</div>
+
+
+</div>

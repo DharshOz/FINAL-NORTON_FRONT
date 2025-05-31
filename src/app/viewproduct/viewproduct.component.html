@@ -1,0 +1,69 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<div *ngIf="loading" class="loading">Loading product details...</div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="product" class="product-container">
+  <!-- Product Header -->
+  <div class="product-header">
+    <h1 class="product-title">{{ product.name }}</h1>
+    <div class="product-meta">
+      <span class="product-category">Category: {{ product.category }}</span>
+    </div>
+  </div>
+
+  <!-- Image Section -->
+  <div class="image-section">
+    <!-- Main Preview Image -->
+    <div class="main-image-container">
+      <img [src]="selectedImage" alt="{{ product.name }}" class="main-image" />
+    </div>
+    
+    <!-- Thumbnail Carousel -->
+    <div *ngIf="product.images?.length > 1" class="thumbnail-carousel">
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" (click)="scrollCarousel('left')">‹</button>
+        <div class="carousel" #carouselContainer>
+          <img 
+            *ngFor="let imgUrl of product.images" 
+            [src]="imgUrl" 
+            [class.active]="imgUrl === selectedImage"
+            (click)="selectImage(imgUrl)"
+            alt="Thumbnail"
+            class="thumbnail"
+          />
+        </div>
+        <button class="carousel-btn right" (click)="scrollCarousel('right')">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div class="details-section">
+    <!-- Conditional Description -->
+    <div *ngIf="product.description" class="description-card">
+      <h3 class="section-title">Product Overview</h3>
+      <p class="description-text">{{ product.description }}</p>
+    </div>
+
+    <!-- Specifications -->
+    <div class="specs-container">
+    <h3 class="section-title">Technical Specifications</h3>
+    <div class="compact-table-container">
+      <table class="elegant-specs-table">
+        <thead>
+          <tr class="table-header">
+            <th>Feature</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let spec of product.specifications" class="spec-row">
+            <td class="spec-type">{{ spec.type }}</td>
+            <td class="spec-detail">{{ spec.detail }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
