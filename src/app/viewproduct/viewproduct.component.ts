@@ -1,12 +1,13 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient,HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-viewproduct',
   standalone: true,
-  imports: [CommonModule,HttpClientModule], // Remove HttpClientModule from here
+  imports: [CommonModule],
   templateUrl: './viewproduct.component.html',
   styleUrls: ['./viewproduct.component.css']
 })
@@ -17,10 +18,21 @@ export class ViewproductComponent implements OnInit {
   loading: boolean = true;
   error: string = '';
   selectedImage: string = '';
+  isBrowser: boolean;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit(): void {
+    if (this.isBrowser) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     this.productId = this.route.snapshot.paramMap.get('id') || '';
     if (this.productId) {
       this.fetchProductDetails(this.productId);
@@ -33,21 +45,18 @@ export class ViewproductComponent implements OnInit {
   scrollCarousel(direction: 'left' | 'right') {
     const currentIndex = this.product.images.findIndex((img: string) => img === this.selectedImage);
     const lastIndex = this.product.images.length - 1;
-  
+
     if (direction === 'left') {
-      // If at first image, go to last, else go previous
       this.selectedImage = currentIndex === 0
         ? this.product.images[lastIndex]
         : this.product.images[currentIndex - 1];
     } else if (direction === 'right') {
-      // If at last image, go to first, else go next
       this.selectedImage = currentIndex === lastIndex
         ? this.product.images[0]
         : this.product.images[currentIndex + 1];
     }
   }
-  
-  
+
   selectImage(imgUrl: string) {
     this.selectedImage = imgUrl;
   }

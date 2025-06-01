@@ -546,3 +546,13 @@ body {
     transform: scale(1, 1);
   }
 }
+.footer-text {
+  text-align: center; /* Default: center for desktop */
+}
+
+@media screen and (max-width: 768px) {
+  .footer-text {
+    text-align: left;  /* Left-align on mobile */
+    padding: 15px;     /* Optional spacing for mobile */
+  }
+}

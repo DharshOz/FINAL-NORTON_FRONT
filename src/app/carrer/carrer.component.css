@@ -149,4 +149,14 @@
       margin: 10px 15px;
     }
   }
+  .career-header {
+    text-align: center; /* Desktop default */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .career-header {
+      text-align: left;   /* Mobile: left-align text */
+      padding: 15px;      /* Optional: add spacing */
+    }
+  }
   

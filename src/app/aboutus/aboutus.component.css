@@ -859,3 +859,18 @@ body {
     flex-direction: column-reverse;
   }
 }
+.advisor-text {
+  text-align: left;
+  padding-left: 15px;
+}
+.advisor-section {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+@media screen and (max-width: 768px) {
+  .text-content {
+    text-align: left;
+    padding: 15px;
+  }
+}
